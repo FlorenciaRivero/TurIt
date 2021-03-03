@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButtonPuerto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/puertodesalto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textviewPuerto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agregar Puerto de Salto para ganar mas puntos"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonPuerto" />
+
+            <ImageButton
+                android:id="@+id/imageButtonLocales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/localesdescuentos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textviewPuerto" />
+
+            <TextView
+                android:id="@+id/textViewLocales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Locales donde canjear sus premios"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonLocales" />
+
+            <ImageButton
+                android:id="@+id/imageButtonLugares"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lugaresrecomendados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLocales"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lugares recomendados a visitar"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonLugares"
+                android:layout_marginBottom="10dp"/>
+
+            <!--A SOLUCIONAR: texto hardcodeado-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
