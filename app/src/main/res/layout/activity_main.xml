@@ -10,8 +10,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.TurIt.AppBarOverlay"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:theme="@style/Theme.TurIt.AppBarOverlay">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -27,18 +26,29 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:layout_marginLeft="5dp"
+                android:layout_gravity="start"
                 android:src="@drawable/logo" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_gravity="bottom"
-                android:layout_marginHorizontal="75dp"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:text="PUNTOS" /> <!--buscar forma de centrar sin hardcodear-->
+
+            <ImageButton
+                android:id="@+id/opcionesIB"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/darker_blue"
+                android:src="@drawable/ic_menu" />
 
         </LinearLayout>
 
