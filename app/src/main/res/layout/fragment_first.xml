@@ -16,6 +16,7 @@
             android:orientation="vertical">
 
             <ImageButton
+                android:contentDescription="@string/description_puerto"
                 android:id="@+id/imageButtonPuerto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,11 +30,12 @@
                 android:id="@+id/textviewPuerto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agregar Puerto de Salto para ganar mas puntos"
+                android:text="@string/texto_agregar"
                 android:layout_gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/imageButtonPuerto" />
 
             <ImageButton
+                android:contentDescription="@string/description_shopping"
                 android:id="@+id/imageButtonLocales"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,11 +49,12 @@
                 android:id="@+id/textViewLocales"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Locales donde canjear sus premios"
+                android:text="@string/texto_canjear_premios"
                 android:layout_gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/imageButtonLocales" />
 
             <ImageButton
+                android:contentDescription="@string/description_parque"
                 android:id="@+id/imageButtonLugares"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,12 +67,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lugares recomendados a visitar"
+                android:text="@string/texto_lugres_recomendados"
                 android:layout_gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/imageButtonLugares"
                 android:layout_marginBottom="10dp"/>
-
-            <!--A SOLUCIONAR: texto hardcodeado-->
 
         </LinearLayout>
 

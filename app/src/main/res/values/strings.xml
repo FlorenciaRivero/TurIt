@@ -1,15 +1,31 @@
 <resources>
     <string name="app_name">TurIt</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="puntos">PUNTOS</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
+    <string name="description_header">Una mesa con un mapa arriba. Se ven manos de dos personas que están planeando un viaje,
+        una tiene una taza de café en la mano y la otra está tomando apuntes en una libreta.
+        También se observa una computadora portátil, dos camaras de fotos, un vaso de agua y dos pequeñas plantas cactus sobre la mesa.</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="perfil">Perfil</string>
+    <string name="cambiar_datos_usuario">Cambiar datos de usuario</string>
+    <string name="cambiar_contrasena">Cambiar contraseña</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="historial_canjes">Historial de canjes</string>
+    <string name="terminos_condiciones">Términos y Condiciones</string>
+    <string name="sobre_nosotros">Sobre nosotros</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="description_puerto">Se observa el muelle en el puerto de Salto, Uruguay, con una grúa de puerto para contenedores.
+        A lo lejos se ve el río Uruguay y en el horizonte se ven edificaciones en la ciudad de Concordia, Entre Ríos, Argentina.</string>
+    <string name="texto_agregar">Agregar Puerto de Salto para ganar mas puntos.</string>
+    <string name="description_shopping">Se observa el interior del shopping de Salto, a los costados las tiendas,
+        en el centro la escalera mecánica para subir y el ascensor.</string>
+    <string name="texto_canjear_premios">Locales donde canjear sus premios.</string>
+    <string name="description_parque">Parque acuático de Salto. Se ven 3 altos toboganes a lo lejos, árboles a los costados y abajo
+        en el medio de la imágen un río artificial por donde la gente pasea en gomones flotando.</string>
+    <string name="texto_lugres_recomendados">Lugares recomendados a visitar.</string>
 </resources>

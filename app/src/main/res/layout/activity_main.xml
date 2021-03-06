@@ -19,9 +19,6 @@
         android:layout_gravity="start"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".MainActivity">
@@ -46,6 +43,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:contentDescription="@string/description_header"
+                        android:id="@+id/logo"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_gravity="start"
@@ -57,8 +56,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="PUNTOS"
-                        android:textColor="@color/white" /> <!--buscar forma de centrar sin hardcodear-->
+                        android:text="@string/puntos"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
