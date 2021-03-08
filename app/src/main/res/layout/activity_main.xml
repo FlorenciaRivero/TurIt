@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:fitsSystemWindows="true">
+    <!--tools:openDrawer="start">-->
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -68,5 +68,22 @@
         <include layout="@layout/content_main" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded"
+            android:elevation="16dp"
+            android:padding="8dp"
+            app:cnb_menuResource="@menu/menu_bottom">
+
+        </com.ismaeldivita.chipnavigation.ChipNavigationBar>
+
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
