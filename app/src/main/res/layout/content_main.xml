@@ -17,7 +17,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph">
 
-    <!--en vez de FragmentContainerView decia fragment. AS me pidio cambiar-->
-
     </androidx.fragment.app.FragmentContainerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
