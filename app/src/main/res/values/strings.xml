@@ -28,4 +28,6 @@
     <string name="description_parque">Parque acuático de Salto. Se ven 3 altos toboganes a lo lejos, árboles a los costados y abajo
         en el medio de la imágen un río artificial por donde la gente pasea en gomones flotando.</string>
     <string name="texto_lugres_recomendados">Lugares recomendados a visitar.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
