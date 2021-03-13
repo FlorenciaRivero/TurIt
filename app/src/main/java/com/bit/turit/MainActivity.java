@@ -1,10 +1,19 @@
 package com.bit.turit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import androidx.annotation.NonNull;
@@ -16,8 +25,23 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    FirebaseAuth mfirebaseAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+
+    public static final int REQUEST_CODE = 5454;
+
+    List<AuthUI.IdpConfig> provider = Arrays.asList(
+            new AuthUI.IdpConfig.FacebookBuilder().build(),
+            new AuthUI.IdpConfig.EmailBuilder().build()
+            //new AuthUI.IdpConfig.GoogleBuilder().build()
+
+    );
 
     private static final String TAG = MainActivity.class.getSimpleName();
     //Variables
@@ -32,6 +56,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mfirebaseAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                if (user !=null){
+                    Toast.makeText(MainActivity.this, "Sesión Iniciada", Toast.LENGTH_SHORT).show();
+                }else  {
+                    startActivityForResult(AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setAvailableProviders(provider)
+                            .setIsSmartLockEnabled(false)
+                            .build(), REQUEST_CODE
+                    );
+                }
+            }
+        };
+
+
 
         /*----------Hooks----------*/
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -97,7 +142,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
         });
-    }
+
+    }// FINAL DEL ON-CREATE!!!!!!!!!!!
+
+
 
     /*Para que no se cierre la app entera cuando abrimos el menu y apretamos botón para atrás.*/
     @Override
@@ -116,4 +164,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return true;
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mfirebaseAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        mfirebaseAuth.removeAuthStateListener(mAuthListener);
+    }
+
+
+    public void cerrarsesion(MenuItem item) {
+        AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(MainActivity.this, "Sesión Finalizada", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+    }
+
 }
+
+

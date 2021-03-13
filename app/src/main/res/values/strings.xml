@@ -30,4 +30,9 @@
     <string name="texto_lugres_recomendados">Lugares recomendados a visitar.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_application_id" translatable="false">1720649918130250</string>
+
+    <string name="facebook_login_protocol_schema" translatable="false">fb1720649918130250</string>
+
 </resources>

@@ -27,8 +27,8 @@
 
         <item
             android:id="@+id/nav_notificaciones"
-            android:title="@string/notificaciones"
-            android:icon="@drawable/ic_notifications"/>
+            android:icon="@drawable/ic_notifications"
+            android:title="@string/notificaciones" />
 
         <item
             android:id="@+id/nav_historial"
@@ -46,6 +46,7 @@
             android:icon="@drawable/ic_sobre"/>
 
         <item
+            android:onClick="cerrarsesion"
             android:id="@+id/nav_logout"
             android:title="@string/cerrar_sesion"
             android:icon="@drawable/ic_baseline_logout_24"/>
