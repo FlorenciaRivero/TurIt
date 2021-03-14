@@ -24,6 +24,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,9 +52,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ChipNavigationBar bottomNav;
     FragmentManager fragmentManager;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        setTheme(R.style.AppTheme);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -111,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNav.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int id) {
+
                 Fragment fragment = null;
                 switch (id){
                     /*case R.id.home:
@@ -179,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    public void cerrarsesion(MenuItem item) {
+    public void cerrarsesion (MenuItem item) {
         AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
