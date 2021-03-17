@@ -3,6 +3,7 @@ package com.bit.turit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TimePicker;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -44,13 +46,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     );
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    /*private static final String TAG = MainActivity.class.getSimpleName();*/
     //Variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    ChipNavigationBar bottomNav;
+    /*ChipNavigationBar bottomNav;*/
     FragmentManager fragmentManager;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,8 +100,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
 
+
         /*----------Bottom Navigation Bar----------*/
-        bottomNav = findViewById(R.id.bottom_nav);
+        /*bottomNav = findViewById(R.id.bottom_nav);*/
+        bottomNavigationView = findViewById(R.id.bottom_NavigationView);
 
         /*----------Para que se abra en el fragment home la aplicacion----------*/
         /*if (savedInstanceState==null) {
@@ -110,8 +115,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .commit();
         }*/
 
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_NavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(0);
+        menuItem.setChecked(true);
 
-        bottomNav.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+
+                        break;
+                    case R.id.ticket:
+                        Intent intent1 = new Intent(MainActivity.this, TicketActivity.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.agregar:
+                        Intent intent2 = new Intent(MainActivity.this, AgregarActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.lugares:
+                        Intent intent3 = new Intent(MainActivity.this, LugaresActivity.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.tiendas:
+                        Intent intent4 = new Intent(MainActivity.this, TiendasActivity.class);
+                        startActivity(intent4);
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+
+
+        /*bottomNav.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int id) {
 
@@ -119,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 switch (id){
                     /*case R.id.home:
                         fragment = new HomeFragment();
-                        break;*/
+                        break;
                     case R.id.ticket:
                         fragment = new TicketFragment();
                         break;
@@ -145,13 +186,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
 
-        });
+
+            public boolean onNavigationItemSelected(@NonNull MenuItem item){
+                switch (item.getItemId()){
+                    case R.id.home:
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+                return false;
+            }
+
+        });*/
 
     }// FINAL DEL ON-CREATE!!!!!!!!!!!
 
 
 
-    /*Para que no se cierre la app entera cuando abrimos el menu y apretamos botón para atrás.*/
+    /*Para que no se cierre la app entera cuando abrimos el drawer y apretamos botón para atrás.*/
     @Override
     public void onBackPressed() {
 
