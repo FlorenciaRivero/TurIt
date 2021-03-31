@@ -7,12 +7,44 @@
     android:background="@color/dark_blue"
     tools:context=".TicketActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayoutTicket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darker_blue">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/ticket_texto_appbarlayout"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/darker_blue"/>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ticketTV"
+        android:id="@+id/ticketTV2"
         android:text="Ticket"
-        android:textSize="26dp"
+        android:textSize="26sp"
         android:textColor="@color/white"
         android:layout_gravity="center"
         android:gravity="center"/>
@@ -38,11 +70,9 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:menu="@menu/menu_bottom"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
                 app:labelVisibilityMode="selected"
                 style="@style/AppTheme"
-                android:background="@color/darker_blue"/>
+                app:itemBackground="@color/light_blue"/>
 
         </RelativeLayout>
 

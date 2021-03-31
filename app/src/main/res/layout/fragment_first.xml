@@ -31,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/texto_agregar"
+                android:textColor="@color/black"
                 android:layout_gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/imageButtonPuerto" />
 
@@ -50,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/texto_canjear_premios"
+                android:textColor="@color/black"
                 android:layout_gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/imageButtonLocales" />
 
@@ -68,6 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/texto_lugres_recomendados"
+                android:textColor="@color/black"
                 android:layout_gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/imageButtonLugares"
                 android:layout_marginBottom="10dp"/>

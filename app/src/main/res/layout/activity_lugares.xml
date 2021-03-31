@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/lugaresTV"
         android:text="Lugares recomendados"
-        android:textSize="26dp"
+        android:textSize="26sp"
         android:textColor="@color/white"
         android:layout_gravity="center"
         android:gravity="center"/>
@@ -20,11 +20,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <FrameLayout
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_NavigationView"
@@ -38,11 +33,9 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:menu="@menu/menu_bottom"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
                 app:labelVisibilityMode="selected"
                 style="@style/AppTheme"
-                android:background="@color/darker_blue"/>
+                app:itemBackground="@color/light_blue"/>
 
         </RelativeLayout>
 

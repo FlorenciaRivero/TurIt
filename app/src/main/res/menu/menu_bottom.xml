@@ -1,42 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    app:cnb_unselectedColor="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_home"
-        android:title="Home"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff"/>
+        android:title="@string/home_item_title"/>
 
     <item
         android:id="@+id/ticket"
         android:icon="@drawable/ic_qr_code_scanner"
-        android:title="Ticket"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff"/>
+        android:title="@string/ticket_item_title"/>
 
     <item
         android:id="@+id/agregar"
-        android:title="Agregar"
-        android:icon="@drawable/ic_add"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff"/>
+        android:title="@string/agregar_item_title"
+        android:icon="@drawable/ic_add"/>
 
     <item
         android:id="@+id/lugares"
-        android:title="Lugares"
-        android:icon="@drawable/ic_map"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff"/>
+        android:title="@string/lugares_item_title"
+        android:icon="@drawable/ic_map"/>
 
     <item
         android:id="@+id/tiendas"
-        android:title="Tiendas"
-        android:icon="@drawable/ic_store"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff"/>
+        android:title="@string/tiendas_item_title"
+        android:icon="@drawable/ic_store"/>
 
 </menu>

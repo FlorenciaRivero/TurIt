@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,24 +8,93 @@
     android:background="@color/dark_blue"
     tools:context=".AgregarActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/agregarTV"
-        android:text="Agregar"
-        android:textSize="26dp"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:gravity="center"/>
-
-    <RelativeLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayoutAgregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarAgregar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:background="@color/darker_blue">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/agregarTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/agrgar_punto"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/darker_blue"/>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fotoIV"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="119dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginBottom="38dp"
+                app:layout_constraintBottom_toTopOf="@+id/tomarFotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:elevation="10dp"
+                android:contentDescription="@string/description_foto_tomada" />
+
+            <Button
+                android:id="@+id/tomarFotoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="37dp"
+                android:text="@string/tomar_foto"
+                app:layout_constraintBottom_toTopOf="@+id/pasarAFormularioBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fotoIV" />
+
+            <Button
+                android:id="@+id/pasarAFormularioBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="141dp"
+                android:text="@string/responder_formulario"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tomarFotoBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/bottomNavRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_NavigationView"
@@ -38,11 +108,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:menu="@menu/menu_bottom"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
             app:labelVisibilityMode="selected"
             style="@style/AppTheme"
-            android:background="@color/darker_blue"/>
+            app:itemBackground="@color/light_blue"/>
 
     </RelativeLayout>
 

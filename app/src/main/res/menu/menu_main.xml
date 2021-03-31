@@ -27,7 +27,7 @@
 
         <item
             android:id="@+id/nav_notificaciones"
-            android:icon="@drawable/ic_notifications"
+            android:icon="@drawable/ic_notifications_outlined"
             android:title="@string/notificaciones" />
 
         <item
@@ -38,12 +38,17 @@
         <item
             android:id="@+id/nav_TyC"
             android:title="@string/terminos_condiciones"
-            android:icon="@drawable/ic_terminos_y_condiciones"/>
+            android:icon="@drawable/ic_outline_sticky_note"/>
+
+        <item
+            android:id="@+id/nav_seguridad"
+            android:title="@string/seguridad"
+            android:icon="@drawable/ic_seguridad"/>
 
         <item
             android:id="@+id/nav_sobre_nosotros"
             android:title="@string/sobre_nosotros"
-            android:icon="@drawable/ic_sobre"/>
+            android:icon="@drawable/ic_outline_person"/>
 
         <item
             android:onClick="cerrarsesion"
