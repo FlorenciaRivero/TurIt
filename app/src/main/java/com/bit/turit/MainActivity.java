@@ -29,12 +29,15 @@ import java.util.List;
 
 public class MainActivity<uid> extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    //Variables
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    BottomNavigationView bottomNavigationView;
     FirebaseAuth mfirebaseAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
 
     String Uid_menutienda1 = "75mN78rBatWiFdZI2rq8akHE2xj2";
-
-
 
     public static final int REQUEST_CODE = 5454;
 
@@ -43,12 +46,6 @@ public class MainActivity<uid> extends AppCompatActivity implements NavigationVi
             new AuthUI.IdpConfig.EmailBuilder().build(),
             new AuthUI.IdpConfig.GoogleBuilder().build()
     );
-
-    //Variables
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
-    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +78,11 @@ public class MainActivity<uid> extends AppCompatActivity implements NavigationVi
             }
         };
 
-        /*----------Hooks----------*/
+        /*----------findViewById----------*/
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+        bottomNavigationView = findViewById(R.id.bottom_NavigationView);
 
         /*----------Toolbar----------*/
         setSupportActionBar(toolbar);
@@ -97,14 +95,13 @@ public class MainActivity<uid> extends AppCompatActivity implements NavigationVi
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*----------Bottom Navigation Bar----------*/
-        bottomNavigationView = findViewById(R.id.bottom_NavigationView);
-
+        /*----------Para que quede de distinto color el icono del item seleccionado del Bottom NavigationView----------*/
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_NavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
 
+        /*----------Para abrir los diferentes items (Home, Ticket, Agregar, Lugares y Tiendas) del menu_main----------*/
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

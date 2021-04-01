@@ -114,6 +114,5 @@
                 app:itemBackground="@color/light_blue"/>
 
         </RelativeLayout>
-
     </androidx.drawerlayout.widget.DrawerLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

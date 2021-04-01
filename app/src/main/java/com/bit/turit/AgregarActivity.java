@@ -55,7 +55,7 @@ public class AgregarActivity extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(2);
         menuItem.setChecked(true);
 
-        /*----------Para abrir la cámara cuando se seleccione el botón Tomar Foto----------*/
+        /*----------Para abrir la cámara y pedir permiso cuando se seleccione el botón Tomar Foto----------*/
         fotoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,7 +133,6 @@ public class AgregarActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     protected void onActivityResult (int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -167,7 +166,8 @@ public class AgregarActivity extends AppCompatActivity {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
+            // Aquí se crearía la carpeta donde se guardaría la foto,
+            // pero no queremos que el usuario pueda subir desde la galería, así que no la creamos
             File photoFile = null;
             try {
                 photoFile = createImageFile();
@@ -184,5 +184,4 @@ public class AgregarActivity extends AppCompatActivity {
             }
         }
     }
-
 }
