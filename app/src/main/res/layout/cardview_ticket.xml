@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/darker_blue">
+
+    <TextView
+        android:id="@+id/cardviewNombreLocalTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LA RECOVA"
+        android:textColor="@color/dark_golden"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/cardviewIV"
+        android:layout_width="wrap_content"
+        android:layout_height="248dp"
+        android:src="@drawable/drink"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+    <TextView
+        android:id="@+id/textoPremioTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UN TRAGO GRATIS CON TU CENA"
+        android:textColor="@color/golden"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/valorPuntosTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="150 PUNTOS"
+        android:textColor="@color/darker_blue"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dp"/>
+
+    <Button
+        android:id="@+id/obtenerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OBTENER"
+        android:backgroundTint="@color/golden"
+        android:textColor="@color/darker_blue"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

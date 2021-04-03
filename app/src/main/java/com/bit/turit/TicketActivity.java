@@ -7,6 +7,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,14 +25,20 @@ public class TicketActivity extends AppCompatActivity  {
 
     //Variables
     BottomNavigationView bottomNavigationView;
+    private RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket);
 
-        /*----------Bottom Navigation Bar----------*/
+        /*----------findViewById----------*/
         bottomNavigationView = findViewById(R.id.bottom_NavigationView);
+        recyclerView = findViewById(R.id.ticketRecyclerView);
+
+        layoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(layoutManager);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_NavigationView);
         Menu menu = bottomNavigationView.getMenu();

@@ -21,11 +21,17 @@
         <activity android:name=".GraciasActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"/>
+        <!--A FormularioActivity se le agregó android:noHistory="true"
+        para que una vez el usuario envíe el formulario, no pueda
+        volver para atrás y reenviarlo para ganar mas puntos
+        con el mismo atractivo turístico-->
+
         <activity
             android:name=".FormularioActivity"
             android:label="@string/title_activity_formulario"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/SplashTheme"
+            android:noHistory="true"/>/>
         <activity
             android:name=".MenuTiendaActivity"
             android:screenOrientation="portrait"
